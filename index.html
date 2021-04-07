@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>GameBase</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <h1 id="username"></h1>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">GAMEBASE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                            <li><a class="dropdown-item" href="admin.html">Add new game by the admin</a></li>
+                            <li><a class="dropdown-item" href="https://discord.gg/qBjhbVz6">Join the discord Server</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Reviews and Comments</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <!-- Trigger/Open The Modal -->
+                    <a href="#" id="myBtn">Search for games here</a>
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+                                <input type="text" id="myInput" onkeyup="myFunction()"
+                                    placeholder="Search for games here....">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+
+                            <ul id="myUL">
+
+                                <li><a href="https://play.famobi.com/element-blocks">Element Blocks</a></li>
+                                <li><a href="https://play.famobi.com/pirate-cards">Pirate Cards</a></li>
+
+                                <li><a href="https://play.famobi.com/zoo-boom">Zoo Boom</a></li>
+                                <li><a href="https://play.famobi.com/bubble-woods">Bubble Woods</a></li>
+
+                                <li><a href="https://play.famobi.com/perfect-piano">Perfect Piano</a></li>
+                                <li><a href="https://play.famobi.com/diamond-rush">Diamond Rush</a></li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+                    <script>
+                        var input, filter, ul, li, a, i, txtValue;
+                            input = document.getElementById("myInput");
+                            input.addEventListener("keyup", myFunction);
+                        function myFunction() {
+                          filter = input.value.toUpperCase();
+                            ul = document.getElementById("myUL");
+                            li = ul.getElementsByTagName("li");
+                            for (i = 0; i < li.length; i++) {
+                                a = li[i].getElementsByTagName("a")[0];
+                                txtValue = a.textContent || a.innerText;
+                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                    li[i].style.display = "";
+                                } else {
+                                    li[i].style.display = "none";
+                                }
+                            }
+                        }
+                    </script>
+
+                    <script>
+                        // Get the modal
+                        var modal = document.getElementById("myModal");
+
+                        // Get the button that opens the modal
+                        var btn = document.getElementById("myBtn");
+
+                        // Get the <span> element that closes the modal
+                        var span = document.getElementsByClassName("close")[0];
+
+                        // When the user clicks the button, open the modal 
+                        btn.onclick = function () {
+                            modal.style.display = "block";
+                        }
+
+                        // When the user clicks on <span> (x), close the modal
+                        span.onclick = function () {
+                            modal.style.display = "none";
+                        }
+
+                        // When the user clicks anywhere outside of the modal, close it
+                        window.onclick = function (event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        }
+                    </script>
+
+
+                </form>
+                <script src="js/suggestions.js"></script>
+                <script src="js/script.js"></script>
+                <div class="mx-2">
+                    <a href="signup.html"><button class="btn btn-primary">SignUp</button></a>
+                   
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <!-- wrapper div starts -->
+
+        <div class="fixed-bg bg-1">
+            <h1>WELCOME TO GAMEBASE</h1>
+
+        </div>
+
+        <div class="scroll-bg">
+            <h3>Welcome to gamebase, a heaven for gamers. Well gaming should be fun, isn't it? So why not a get all the
+                games at a single place. We are here to make your life easier and more fun. </h3>
+        </div>
+
+        <div class="fixed-bg bg-2">
+            <h1>See what's trending.</h1>
+
+
+
+            <script>
+                function myFunction() {
+                    location.href("game1.html")
+                }
+            </script>
+
+
+            <a href="game1.html">
+                <img src="https://img.cdn.famobi.com/portal/html5games/images/tmp/ZooBoomTeaser.jpg?v=0.2-beeb681b"
+                    width="200" height="200">
+            </a>
+             <a href="game2.html">
+                <img src="https://img.cdn.famobi.com/portal/html5games/images/tmp/PirateCardsTeaser.jpg?v=0.2-b9888d21"
+                    width="200" height="200">
+            </a> <a href="game3.html">
+                <img src="https://img.cdn.famobi.com/portal/html5games/images/tmp/PerfectPiano_Teaser.jpg?v=0.2-b9888d21"
+                    width="200" height="200">
+            </a> <a href="game4.html">
+                <img src="https://img.cdn.famobi.com/portal/html5games/images/tmp/BubbleWoodsTeaser.jpg?v=0.2-b9888d21"
+                    width="200" height="200">
+            </a> <a href="game5.html">
+                <img src="https://img.cdn.famobi.com/portal/html5games/images/tmp/DiamondRushTeaser.jpg?v=0.2-b9888d21"
+                    width="200" height="200">
+            </a>
+
+
+
+        </div>
+
+        <div class=" scroll-bg">
+            <h3>_________</h3>
+        </div>
+
+        <div class="fixed-bg bg-3">
+            <h1>New Arrivals</h1>
+            <a href="game1.html">
+                <img id="img1" src="https://img.cdn.famobi.com/portal/html5games/images/tmp/Train2048Teaser.jpg?v=0.2-26ee73f9"
+                    width="200" height="200">
+                    <script>
+                        document.getElementById("img1") = "https://img.cdn.famobi.com/portal/html5games/images/tmp/Train2048Teaser.jpg?v=0.2-26ee73f9";
+                    </script>
+            </a>
+             <a href="game2.html">
+                <img id="img2"src="https://img.cdn.famobi.com/portal/html5games/images/tmp/Giant2048Teaser.jpg?v=0.2-26ee73f9"
+                    width="200" height="200">
+                    <script>
+                        document.getElementById("img2") = "https://img.cdn.famobi.com/portal/html5games/images/tmp/Giant2048Teaser.jpg?v=0.2-26ee73f9";
+                    </script>
+                    
+            </a> <a href="game3.html">
+                <img id="img3"src="https://img.cdn.famobi.com/portal/html5games/images/tmp/FuzziesTeaser.jpg?v=0.2-26ee73f9"
+                    width="200" height="200">
+                    <script>
+                        document.getElementById("img3") = "https://img.cdn.famobi.com/portal/html5games/images/tmp/FuzziesTeaser.jpg?v=0.2-26ee73f9";
+                    </script>
+            </a> <a href="game4.html">
+                <img id="img4"src="https://img.cdn.famobi.com/portal/html5games/images/tmp/GardenBloomTeaser.jpg?v=0.2-26ee73f9"
+                    width="200" height="200">
+                    <script>
+                        document.getElementById("img4") = "https://img.cdn.famobi.com/portal/html5games/images/tmp/GardenBloomTeaser.jpg?v=0.2-26ee73f9";
+                    </script>
+            </a> <a href="game5.html">
+                <img id="img5"src="https://img.cdn.famobi.com/portal/html5games/images/tmp/Mahjong3dTeaser.jpg?v=0.2-26ee73f9"
+                    width="200" height="200">
+                    <script>
+                        document.getElementById("img5") = "https://img.cdn.famobi.com/portal/html5games/images/tmp/Mahjong3dTeaser.jpg?v=0.2-26ee73f9";
+                    </script>
+            </a>
+
+        </div>
+
+    </div> <!-- wrapper div ends-->
+    <form class="center-align admin-Actions" style="margin: 40px auto; max-width: 300px; display: none;">
+        <input type="email" placeholder="User email" id="admin-email" required />
+        <button class="btn-small yellow darken-2 z-depth-0">Make Admin</button>
+    </form>
+
+
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="SignUpModal" tabindex="-1" aria-labelledby="SignUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="SignUpModalLabel">Create your GameBase Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <input type="name" placeholder="Enter your username">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase.js"></script>
+
+     
+      <script>
+          // Your web app's Firebase configuration
+          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+          var firebaseConfig = {
+              apiKey: "AIzaSyBSBy9eoww-dsOwhtc1ZQunR6PEwhZFreE",
+              authDomain: "gamebase-auth.firebaseapp.com",
+              projectId: "gamebase-auth",
+              storageBucket: "gamebase-auth.appspot.com",
+              messagingSenderId: "702695301036",
+              appId: "1:702695301036:web:73a20b651d426a87c3a409",
+              measurementId: "G-VKHD2LTQ12"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          </script>
+          <script type="text/JavaScript">
+              var userId= localstorage.getItem('id');
+              firebase.database().ref('User'+userId).once('value').then(
+                  function(snapshot){
+                  var username=(snapshot.val() && snapshot.val().username)
+                  document.getElementById('username').innerHTML=username;
+                  }
+              );
+          </script>
+   
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style1.css" type="text/css">
+        <title>SignUp/SignIn To Gamebase</title></head>
+    <body>
+        <div class="form">
+        <form>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">Enter UserName</label>
+                <input type="text" class="form-control" id="username">
+            </div>
+           <button class="btn btn-primary" onclick="RegisterUser()">SignUp</button>
+           <button class="btn btn-primary" onclick="LoginUser()">Login</button>
+        </form>
+        </div>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase.js"></script>
+
+   
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBSBy9eoww-dsOwhtc1ZQunR6PEwhZFreE",
+            authDomain: "gamebase-auth.firebaseapp.com",
+            projectId: "gamebase-auth",
+            storageBucket: "gamebase-auth.appspot.com",
+            messagingSenderId: "702695301036",
+            appId: "1:702695301036:web:73a20b651d426a87c3a409",
+            measurementId: "G-VKHD2LTQ12"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+        function RegisterUser() {
+            var exampleInputEmail1 = document.getElementById('exampleInputEmail1').value;
+            var exampleInputPassword1 = document.getElementById('exampleInputPassword1').value;
+            var username  = document.getElementById('username').value;
+            firebse.auth().createUserWithEmailAndPassword(exampleInputEmail1, exampleInputPassword1).then(function () {
+                alert('User Registered Successfully.');
+                var id = firebase.auth().currentUser.uid;
+                firebase.databse().ref('User/' + id).set({
+                    username: username,
+                });
+
+
+            }).catch(function (error) {
+                var errcode = error.code;
+                var errmsg = error.message;
+
+            });
+        }
+        function LoginUser(){
+            var exampleInputEmail1 = document.getElementById('exampleInputEmail1').value;
+            var exampleInputPassword1 = document.getElementById('exampleInputPassword1').value;
+            firebase.auth().signInWithEmailAndPassword(exampleInputEmail1, exampleInputPassword1).then(function (){
+                var id=firebase.auth().currentUser.uid;
+                window.location.replace("file:///D:/Users/Dell/Desktop/GameBase/index.html");
+                localStorage.setItem('id', id);
+            }).catch(function (error){
+                var errcode = error.code;
+                var errmsg = error.message;
+
+            }
+            
+            );
+        }
+
+    </script>
+
+    </body>
+</html>
